@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {AddCategory} from './components/AddCategory';
 
 export const GiftExpertApp = () => {
     const [categories, setCategories] = useState(['One Piece', 'Naruto', 'Dragon Ball']);
@@ -16,25 +17,15 @@ export const GiftExpertApp = () => {
         <h1>Gift Expert App</h1>
         <hr />
         {/*input*/}
-       <input type="text" placeholder="Agregar Categoria"
-            onKeyDown={(event) => { 
-                // Verificar si la tecla presionada es Enter y el input no está vacío
-                // Si es así, agregar la categoría vía onkeydown
-                if (event.key === 'Enter' && event.target.value.trim().length > 0) {
-                    onAddCategory(event.target.value.trim());
-                    event.target.value = ''; // Limpiar el input
-                }
-            }} 
-        />
-        
-        <button onClick={() => {
+        <AddCategory setCategories={ setCategories }/>       
+
+        {/* <button onClick={() => {
             const input = document.querySelector('input');  
             if (input.value.trim().length > 0) {
                 onAddCategory(input.value.trim());
                 input.value = ''; // Limpiar el input
             }
-        }
-        }>Agregar</button>
+        }}>Agregar</button> */}
         <hr />
         {/*Listado de gifts*/}
         <h2>Categorias</h2>
