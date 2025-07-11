@@ -1,6 +1,6 @@
 # React + Vite
 
-APIKEY GIFT APP: dMhevMvHp9VU7VIAR9FnZXvIHlVxge5Q
+APIKEY GIFT APP: MpCCd3aDNOECdUHeVRBGqtaiea36Eb7D
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
