@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GifItem } from "./GifItem";
 import { getGifs } from "../helpers/getGifs";
 
 export const GifGrid = ({ category }) => {   
@@ -15,14 +16,24 @@ export const GifGrid = ({ category }) => {
     return (
         <>
             <h4>{category}</h4>
-            <ol>  
-                {gifs.map(({ id, title, url }) => (
-                    <li key={id}>
-                        <h5>{title}</h5>
-                        <img src={url} alt={title} />
-                    </li>
-                ))}
-            </ol>
+            <div className="card-grid">  
+                {
+                    // gifs.map(({ id, title, url }) => (
+                    //     <GifItem 
+                    //         key={id}
+                    //         title={title}
+                    //         url={url}   
+                    //     />
+                    // ))
+                    //esto de arriba es lo mismo que lo de abajo
+                    gifs.map((gif) => (
+                        <GifItem 
+                            key={gif.id}
+                            {...gif } // Spread operator para pasar las props
+                        />
+                    ))
+                }
+            </div>
         </>
     );
 }
