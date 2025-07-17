@@ -3,7 +3,7 @@ import {AddCategory} from './components/AddCategory';
 import { GifGrid } from './components/GifGrid';
 
 export const GiftExpertApp = () => {
-    const [categories, setCategories] = useState([]);
+    const [categories, setCategories] = useState(['One Piece']);
 
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return;
@@ -12,8 +12,7 @@ export const GiftExpertApp = () => {
     };
 
     return (
-        <>
-            
+        <>            
             <h1>Gift Expert App</h1>
             <hr />            
             <AddCategory onNewCategory={ onAddCategory }/>                 
