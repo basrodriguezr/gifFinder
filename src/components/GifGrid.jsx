@@ -3,13 +3,17 @@ import { useFetchGifs } from "../Hooks/useFetchGifs";
 
 export const GifGrid = ({ category }) => {   
     console.log("category", category);
-    const { images } = useFetchGifs(category);   
+    const { images, isLoading } = useFetchGifs(category);   
 
     return (
         <>
             <h1>{category}</h1>
-            
-           
+
+            {
+                isLoading ? <h2>Cargando...</h2> : null
+                // isLoading && (<h2>Cargando...</h2>) // Alternativa con operador lógico AND
+            }    
+        
             <div className="card-grid">  
                 {
                     images.map((image) => (
